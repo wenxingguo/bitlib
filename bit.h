@@ -12,7 +12,9 @@ public:
     bool set_bit(const int position, const bool status);
     bool test_bit(const int position) const;
     bit_array(int length);
-    ~bit_array();
+    ~bit_array(){
+        delete array;
+    }
 };
 
 const int bit_array::CELL_LENGTH = int(sizeof(char))*8;
